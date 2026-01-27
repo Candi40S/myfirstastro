@@ -1,6 +1,17 @@
 ---
-//import '../styles/global.css';
----
+const pageTitle = "About - Candi's Astro Site";
+const identity = {
+  firstName: "Candi",
+  country: "Suriano",
+  occupation: "Software Architect",
+  hobbies: ["card making", "gaming", "F1 racing", "reading"],
+};
+
+const skills = ["Software Design", ".Net", "C#", "React", "MUI", "Astro", "Class diagramming", "Writing Docs"];
+const happy = true;
+const finished = false;
+const goal = 1;
+--- 
 
 <html lang="en">
     <head>
@@ -9,18 +20,29 @@
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>About - Candi's Astro Site</title>
+        <title>{pageTitle}</title>
     </head>
     <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
     
-        <h1>About Me</h1>
+        <h1>{pageTitle}</h1>
         <h2> ... And my new astro site</h2>
-       <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+        <p>Here are a few facts about me:</p>
+<ul>
+   <li> <p>Hi! My name is {identity.firstName} {identity.country}, and I am a {identity.occupation}.</p></li>
+    <li><p>Some of my hobbies include: {identity.hobbies.join(", ")}.</p></li>
+    <li><p>Here are some of my professional skills: {skills.join(", ")}.</p></li>
+</ul>
+    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p></li>
 
   <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+  {happy && <p>I am happy to be learning Astro!</p>}
+
+{finished && <p>I finished this tutorial!</p>}
+
+{goal === 1 ? <p>My goal is to finish in {goal} day.</p> : <p>My goal is not {goal} day.</p>}
  
     </body>
 </html>
