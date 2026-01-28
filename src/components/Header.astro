@@ -1,0 +1,24 @@
+---
+    import Navigation from './Navigation.astro';
+    import Menu from './Menu.astro';
+---
+<header>
+    
+    <nav>
+        <Menu />
+        <Navigation />
+    </nav>
+</header>
+
+<style>
+    header {
+        background-color: #f0f0f0;
+        padding: 1rem;
+        border-bottom: 1px solid #ddd;
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+</style>
